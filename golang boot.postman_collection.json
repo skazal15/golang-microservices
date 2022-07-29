@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "a12ef559-73a0-446f-b8e4-54c4681adf4f",
+		"name": "golang boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19741781"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/register?Name=said&Email=said@gmail.com&Password=saidf223&NoHP=082283027464",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"register"
+					],
+					"query": [
+						{
+							"key": "Name",
+							"value": "said"
+						},
+						{
+							"key": "Email",
+							"value": "said@gmail.com"
+						},
+						{
+							"key": "Password",
+							"value": "saidf223"
+						},
+						{
+							"key": "NoHP",
+							"value": "082283027464"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTg5ODQyOTgsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.fbadXFbM0s5F-IuiBk3Z3Eqa-pEh0pvPfI2sjRFVITI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/login?Email=said@gmail.com&Password=saidf223",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "Email",
+							"value": "said@gmail.com"
+						},
+						{
+							"key": "Password",
+							"value": "saidf223"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create exercise",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTg5ODQyOTgsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.fbadXFbM0s5F-IuiBk3Z3Eqa-pEh0pvPfI2sjRFVITI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/exercises?Title=Biology&Description=soal biology",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"exercises"
+					],
+					"query": [
+						{
+							"key": "Title",
+							"value": "Biology"
+						},
+						{
+							"key": "Description",
+							"value": "soal biology"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create question",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTg5ODQyOTgsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.fbadXFbM0s5F-IuiBk3Z3Eqa-pEh0pvPfI2sjRFVITI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/exercises/1/question?Body=nama ayam&OptionA=a&OptionB=b&OptionC=c&OptionD=d&CorrectAnswer=a&Score=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"exercises",
+						"1",
+						"question"
+					],
+					"query": [
+						{
+							"key": "Body",
+							"value": "nama ayam"
+						},
+						{
+							"key": "OptionA",
+							"value": "a"
+						},
+						{
+							"key": "OptionB",
+							"value": "b"
+						},
+						{
+							"key": "OptionC",
+							"value": "c"
+						},
+						{
+							"key": "OptionD",
+							"value": "d"
+						},
+						{
+							"key": "CorrectAnswer",
+							"value": "a"
+						},
+						{
+							"key": "Score",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create answer",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTg5ODQyOTgsImlzcyI6ImVkc3BlcnQiLCJ1c2VyX2lkIjo0fQ.fbadXFbM0s5F-IuiBk3Z3Eqa-pEh0pvPfI2sjRFVITI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1234/exercises/1/question/12/answer?Answer=a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1234",
+					"path": [
+						"exercises",
+						"1",
+						"question",
+						"12",
+						"answer"
+					],
+					"query": [
+						{
+							"key": "Answer",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

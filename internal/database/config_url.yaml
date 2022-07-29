@@ -1,0 +1,8 @@
+login : "/login"
+register : "/register"
+get_exercise_by_id : "/exercises/:id"
+create_exercise : "/exercises"
+create_question : "/exercises/:exerciseId/question"
+calcute_user_score : "/exercises/:id/score"
+create_answer : "/exercises/:exerciseId/question/:questionId/answer"
+

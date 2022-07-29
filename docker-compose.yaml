@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile.multistage
+    container_name: course-api
+    volumes:
+      - ./internal/database/config.yaml:/app/internal/database/config.yaml
+      - ./internal/database/config_url.yaml:/app/internal/database/config_url.yaml
+    ports:
+      - "1234:1234"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - mynetwork
+
+  db:
+    image: mysql
+    container_name: course-db
+    ports:
+      - "3306"
+    volumes:
+      - ./course.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - MYSQL_DATABASE=db
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user
+      - MYSQL_ROOT_PASSWORD=root
+    healthcheck:
+      test: ["CMD", "mysqladmin","ping","-h","localhost"]
+      timeout: 5s
+      retries: 5
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
+    driver: bridge
